@@ -19,6 +19,7 @@ public class Afterlife extends JFrame {
    InputHandler input;
    
    int x = 0;
+   int y = 0;
    
     public static void main(String[] args) {
         Afterlife game = new Afterlife();
@@ -74,10 +75,10 @@ public class Afterlife extends JFrame {
             x-=5;
         }
         if (input.isKeyDown(KeyEvent.VK_UP)) {
-           
+            y-=10;
         }
         if (input.isKeyDown(KeyEvent.VK_DOWN)) {
-            
+            y+=10;
         }
     }
     
@@ -93,6 +94,8 @@ public class Afterlife extends JFrame {
         
         bbg.setColor(Color.BLACK);
         bbg.drawOval(x, 10, 20, 20);
+       
+        bbg.drawString("Hi",x,y);
        
         g.drawImage(backBuffer, insets.left, insets.top, this); //'this' is the ImageObserver required to draw the image, inherited by JFrame
                 
